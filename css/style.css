@@ -1,0 +1,125 @@
+html{
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 10px;
+    font-size: 25px;
+    font-family:Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family:Arial, sans-serif;
+    font-size: 1.95em;
+}
+
+h3 {
+    text-align: center;
+    font-family:Arial, sans-serif;
+    font-size: 1em;
+}
+
+h2{
+    text-align:center;
+  }
+
+li{
+    margin-top: 20px;
+}
+
+img{
+    border: 5px solid blue;
+    border-radius: 35px;
+    width: 100%;
+
+  }
+
+.label{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Use one column grid with a 10px gap between rows and columns. */
+
+.grid{
+    display: grid;
+    grid-template-columns: 95%;
+    row-gap: 10px;
+    column-gap: 10px;
+
+}
+
+
+
+
+
+
+/*tablet  view must trigger at 772px*/
+
+@media screen and (min-width: 772px){
+    .grid{
+        display: grid;
+        grid-template-columns: 45% 45%;  /*Use  a  two column grid*/
+    }
+
+    .grid img{
+        width: 300px;
+        height: 200px;
+        border-radius: 100%;
+    }
+
+    /*Set the last figure  to take up both columns*/
+    
+    .grid figure:nth-child(9){
+        grid-column: span 2;
+    }
+    .grid img{
+        width: 100%; /**/
+    }  
+        
+    
+}
+
+
+/*large screen view must trigger at 992px*/
+
+@media screen and (min-width: 992px){
+    /*Set  every third figure  to take up both columns.*/
+
+    .grid figure:nth-child(3n){
+        grid-column: span 2;     /* Make the third figure occupy both columns */
+    }
+    .grid img{
+        width: 100%;        /* Make images responsive */
+        border-radius: 0;  /* Remove border radius */
+    }
+        
+        
+}
+
+
+
+html{
+    scroll-behavior: auto;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  /* Styles for dark color scheme */
+  .grid figure{
+    background-color: #121212; /* Dark background */
+    color: rgb(236, 215, 91);
+    border-color: #121212;
+  }
+
+}
+
+
+
+
+
